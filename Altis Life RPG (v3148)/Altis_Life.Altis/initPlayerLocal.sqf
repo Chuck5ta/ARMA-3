@@ -15,10 +15,6 @@ _uid = getPlayerUID player;
 if (_uid == "76561197970197338") then
 {
     player addAction ["Teleport", {player execVM "core\actions\fn_teleport.sqf"}];
-}
-else 
-{
-    hint format ["Failed!!! %1",getPlayerUID player];
 };
 
 //Execute JIP code.
