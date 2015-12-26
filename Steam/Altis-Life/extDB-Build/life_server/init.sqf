@@ -25,7 +25,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 
 	try {
 		_result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection - the name should be AltisLife"};
+		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection - the name should be AltisLife - %1", EXTDB_SETTING(getText,"DatabaseName")};
 		_result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
 		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection ????"};
 	} catch {
